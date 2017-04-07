@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+	{% block form %}
+	<div class = "container">
+		<h4>Register</h4>
+		<br>
+		{% from "_formhelpers.html" import render_field %}
+		<form method=post action="/register/">
+			<dl>
+				<div class="col-xs-4">
+				{{render_field(form.username, class="form-control", placeholder="Username")}}<br>
+				{{render_field(form.email, class="form-control", placeholder="Email")}}<br>
+				{{render_field(form.password, class="form-control", placeholder="Password")}}<br>
+				{{render_field(form.confirm, class="form-control", placeholder="Confirm Password")}}<br>
+				{{render_field(form.accept_tos)}}<br>
+				<input class="btn btn-primary" type=submit value=Register>
+				</div>
+			</dl>
+		
+		</form>
+		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+	</div>
+	{% endblock %}

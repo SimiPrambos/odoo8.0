@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block form %}
+<!-- main content -->
+<div class="container" style="max-width:1500px; min-height:100%">
+	<div class="container">
+		<h3>Please login:</h3>
+      	<br>
+      	<form action="" class="form-inline" method="post">
+	      	<label>Username:</label><br>
+	        <input type="text" class="form-control" placeholder="Username" name="username" value="{{ request.form.username }}"><br><br>
+	        <label>Password:</label><br>
+	        <input type="password" class="form-control" placeholder="Password" name="password" value="{{ request.form.username }}"><br><br>
+	        <input class="btn btn-primary" type="submit" value="Login">
+      	</form>
+		<div class="container">
+		   <br><p>No account? <a href='/register/'>Register here</a></p>
+		   <p><a href='/forgot-password/'>Forgot Password?</a></p>
+		   <br>
+		</div>
+    </div>
+</div>
+
+		<!--login modal-->
+		
+<div id="modalLogin" class="modal">
+	<div class="modal-content">
+		<h2 class="center-align">Login</h2>
+		<div class="center-align">
+			<div class="divider"></div>
+			<form class="col s12">
+				<div class="row center-align">
+					<div class="input-field col m10">
+						<input id="icon_prefix" type="text" class="validate">
+						<label for="icon_prefix">Username</label>
+					</div>
+					<div class="input-field col m10">
+						<input id="icon_password" type="password" class="validate">
+						<label for="icon_password">Password</label>
+					</div>
+				</div>
+			</form>
+			<div class="divider"></div>
+			<p>
+				<a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+				<a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close">Login</a>
+			</p>	
+		</div>
+	</div>
+</div>
+{% endblock %}

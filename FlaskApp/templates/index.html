@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block judul %}
+<h1>{{ judul }}</h1>
+{% endblock %}
+	
+{% block content %}
+<ul>
+{% for d in dict["pertama"] %}
+	<li><a href="{{d[1]}}">{{d[0]}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
